@@ -1,3 +1,5 @@
+![BANNER](https://github.com/user-attachments/assets/021bcfd4-e38d-43f3-842f-deb2cd6d8dd8)
+
 # 🚀 Avatara AI
 
 **Avatara AI** is a next-generation crypto project where **Artificial Intelligence** meets **Virtual Reality**, powered by the transparency and security of **blockchain technology**.
@@ -5,7 +7,7 @@
 ### 🌐 What is Avatara?
 Avatara is a decentralized ecosystem designed to empower immersive VR experiences using blockchain-backed AI intelligence.
 
-### 🔧 Core Features
+
 - AI-powered VR avatars and digital economies
 - Secure blockchain-based transactions
 - Smart contracts for virtual interactions
