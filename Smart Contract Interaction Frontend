@@ -1,0 +1,20 @@
+import { useState } from 'react';
+import { ethers } from 'ethers';
+
+export default function ConnectWallet() {
+  const [account, setAccount] = useState(null);
+
+  const connect = async () => {
+    if (window.ethereum) {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const accounts = await provider.send("eth_requestAccounts", []);
+      setAccount(accounts[0]);
+    }
+  };
+
+  return (
+    <button onClick={connect}>
+      {account ? `Connected: ${account}` : 'Connect Wallet'}
+    </button>
+  );
+}
