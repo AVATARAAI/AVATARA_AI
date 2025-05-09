@@ -1,0 +1,24 @@
+class AIEntity {
+  constructor(id) {
+    this.id = id;
+    this.memory = [];
+    this.state = "idle";
+  }
+
+  think(input) {
+    this.memory.push(input);
+    if (input.includes("threat")) this.state = "defend";
+    else if (input.includes("user")) this.state = "assist";
+  }
+
+  act() {
+    return `Entity ${this.id} is ${this.state}`;
+  }
+}
+
+// Simulate group thought
+const hive = [new AIEntity(1), new AIEntity(2), new AIEntity(3)];
+hive.forEach(agent => {
+  agent.think("user entered VR portal");
+  console.log(agent.act());
+});
