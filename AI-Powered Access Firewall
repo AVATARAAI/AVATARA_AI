@@ -1,0 +1,13 @@
+import re
+from sklearn.ensemble import IsolationForest
+
+def detect_suspicious_activity(data_logs):
+    model = IsolationForest(contamination=0.01)
+    model.fit(data_logs)
+    flags = model.predict(data_logs)
+    return [i for i, flag in enumerate(flags) if flag == -1]
+
+# Example dummy data
+logs = [[0.1], [0.2], [5.0], [0.15], [0.3], [7.5]]
+suspicious = detect_suspicious_activity(logs)
+print("Blocked VR packets:", suspicious)
