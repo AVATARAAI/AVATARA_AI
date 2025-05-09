@@ -1,0 +1,15 @@
+from web3 import Web3
+
+web3 = Web3(Web3.HTTPProvider("https://mainnet.infura.io/v3/YOUR_INFURA_KEY"))
+
+contract_address = "0xYourContractAddress"
+abi = [...]  # Add ABI here
+
+contract = web3.eth.contract(address=contract_address, abi=abi)
+events = contract.events.UserInteraction.createFilter(fromBlock='latest')
+
+def fetch_logs():
+    for event in events.get_new_entries():
+        print("VR Interaction:", event.args)
+
+fetch_logs()
